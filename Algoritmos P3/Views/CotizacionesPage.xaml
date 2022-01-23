@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Algoritmos_P3.ViewModels"
+             x:Class="Algoritmos_P3.Views.CotizacionesPage"
+             x:DataType="viewmodels:CotizacionesPageViewModel"
+             Title="Cotizaciones">
+
+    
+    <ContentPage.BindingContext>
+        <viewmodels:CotizacionesPageViewModel/>
+    </ContentPage.BindingContext> 
+
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="20">
+            <Entry Keyboard="Numeric" Placeholder="Cotización 1" Text="{Binding Cot1Display}"/>
+            <Entry Keyboard="Numeric" Placeholder="Cotización 2" Text="{Binding Cot2Display}"/>
+            <Entry Keyboard="Numeric" Placeholder="Cotización 3" Text="{Binding Cot3Display}"/>
+            <Entry Keyboard="Numeric" Placeholder="Cotización 4" Text="{Binding Cot4Display}"/>
+            <Entry Keyboard="Numeric" Placeholder="Cotización 5" Text="{Binding Cot5Display}"/>
+            <Button Text="Calcular" Command="{Binding CotsCalcular}" Margin="30,10,30,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

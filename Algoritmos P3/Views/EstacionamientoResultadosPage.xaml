@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Algoritmos_P3.ViewModels"
+             x:Class="Algoritmos_P3.Views.EstacionamientoResultadosPage"
+             Shell.PresentationMode="Modal"
+             x:DataType="viewmodels:EstacionamientoResultadosPageViewModel">
+
+    <ContentPage.BindingContext>
+        <viewmodels:EstacionamientoResultadosPageViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
+                <StackLayout Spacing="0" Orientation="Horizontal">
+                    <Label Text="Su cambio es de: " FontSize="Body"/>
+                    <Label Text="{Binding Cambio}" FontSize="Body" FontAttributes="Bold"/>
+                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+            <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
+                <StackLayout Spacing="0" Orientation="Horizontal">
+                    <Label Text="Su cambio es de: " FontSize="Body"/>
+                    <Label Text="{Binding Divisa10}"/>
+                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+            <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
+                <StackLayout Spacing="0" Orientation="Horizontal">
+                    <Label Text="Su cambio es de: " FontSize="Body"/>
+                    <Label Text="{Binding Divisa5}"/>
+                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+            <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
+                <StackLayout Spacing="0" Orientation="Horizontal">
+                    <Label Text="Su cambio es de: " FontSize="Body"/>
+                    <Label Text="{Binding Divisa2}"/>
+                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+            <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
+                <StackLayout Spacing="0" Orientation="Horizontal">
+                    <Label Text="Su cambio es de: " FontSize="Body"/>
+                    <Label Text="{Binding Divisa1}"/>
+                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

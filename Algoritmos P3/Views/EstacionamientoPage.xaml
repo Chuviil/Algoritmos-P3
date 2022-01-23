@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Algoritmos_P3.ViewModels"
+             x:Class="Algoritmos_P3.Views.EstacionamientoPage"
+             x:DataType="viewmodels:EstacionamientoViewModel">
+
+    <ContentPage.BindingContext>
+        <viewmodels:EstacionamientoViewModel/>
+    </ContentPage.BindingContext>        
+    
+
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="20">
+            <Label Text="¿Cuánto tiempo hizo uso de nuestro parqueadero?" FontSize="Body" FontAttributes="Bold" />
+            <Entry x:Name="lblHoras" Placeholder="Horas" Keyboard="Numeric" Text="{Binding Horas}"/>
+            <Label Text="Introducir el Costo Total a pagar (pesos): " FontSize="Body" FontAttributes="Bold" />
+            <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <Label Text="Costo Total a Pagar es (pesos): "/>
+                    <Label Text="{Binding CobroTotal}"/>
+                    <Label Text="$"/>
+                </StackLayout>
+            </Frame>
+            <Entry Placeholder="Valor a pagar" Text="{Binding PagoCliente}" Keyboard="Numeric"/>
+            <Button Command="{Binding EstacionamientoCalcular}" Text="Pagar"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

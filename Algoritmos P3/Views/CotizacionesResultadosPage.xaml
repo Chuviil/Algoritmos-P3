@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Algoritmos_P3.ViewModels"
+             x:Class="Algoritmos_P3.Views.CotizacionesResultadosPage"
+             x:DataType="viewmodels:CotizacionesResultadosPageViewModel"
+             Shell.PresentationMode="Modal">
+
+    <ContentPage.BindingContext>
+        <viewmodels:CotizacionesResultadosPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="10">
+            <Label Text="Cotizaciones Eliminadas" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="{Binding CotCara}" FontSize="Body"/>
+            <Label Text="{Binding CotBarata}" FontSize="Body"/>
+            <Label Text="Promedio de Cotizaciones Restantes" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="{Binding PrmCots}" FontSize="Body"/>
+            <Button Text="Regresar" Command="{Binding GoBack}" Margin="30,15,30,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
