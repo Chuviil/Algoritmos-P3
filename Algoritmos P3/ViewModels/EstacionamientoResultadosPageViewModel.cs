@@ -3,6 +3,8 @@ using MvvmHelpers.Commands;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Algoritmos_P3.ViewModels
@@ -11,12 +13,13 @@ namespace Algoritmos_P3.ViewModels
         QueryProperty(nameof(Divisa10),nameof(Divisa10)),
         QueryProperty(nameof(Divisa5),nameof(Divisa5)),
         QueryProperty(nameof(Divisa2),nameof(Divisa2)),
-        QueryProperty(nameof(Divisa1),nameof(Divisa1))]
+        QueryProperty(nameof(Divisa1),nameof(Divisa1)),
+        QueryProperty(nameof(MonedasEntregadas),nameof(MonedasEntregadas))]
     internal class EstacionamientoResultadosPageViewModel : ObservableObject
     {
         public EstacionamientoResultadosPageViewModel()
         {
-
+            RegresarAEstacionamiento = new AsyncCommand(VolverPantalla);
         }
 
         string cambio;
@@ -52,6 +55,20 @@ namespace Algoritmos_P3.ViewModels
         {
             get => divisa1;
             set => SetProperty(ref divisa1, value);
+        }
+
+        string monedasEntregadas;
+        public string MonedasEntregadas
+        {
+            get => monedasEntregadas;
+            set => SetProperty(ref monedasEntregadas,value);
+        }
+
+        public ICommand RegresarAEstacionamiento { get; } 
+
+        async Task VolverPantalla()
+        {
+            await Shell.Current.GoToAsync("..");
         }
     }
 }

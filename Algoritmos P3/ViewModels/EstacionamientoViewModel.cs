@@ -49,6 +49,13 @@ namespace Algoritmos_P3.ViewModels
             set => SetProperty(ref pagoCliente, value);
         }
 
+        string monedasEntregadas;
+        public string MonedasEntregadas
+        {
+            get => monedasEntregadas;
+            set => SetProperty(ref monedasEntregadas, value);
+        }
+
         public ICommand EstacionamientoCalcular { get; }
 
         async Task CalcularCostos()
@@ -70,7 +77,8 @@ namespace Algoritmos_P3.ViewModels
                     Divisa2 = Cambio - ((Divisa10 * 10) + (Divisa5 * 5));
                     Divisa2 = Divisa2 / 2;
                     Divisa1 = Cambio - ((Divisa10*10)+(Divisa5*5)+(Divisa2*2));
-                    var route = $"{nameof(EstacionamientoResultadosPage)}?Cambio={Cambio}&Divisa10={Divisa10}&Divisa5={Divisa5}&Divisa2={Divisa2}&Divisa1={Divisa1}";
+                    MonedasEntregadas = Convert.ToString(Divisa10 + Divisa5 + Divisa2 + Divisa1);
+                    var route = $"{nameof(EstacionamientoResultadosPage)}?Cambio={Cambio}&Divisa10={Divisa10}&Divisa5={Divisa5}&Divisa2={Divisa2}&Divisa1={Divisa1}&MonedasEntregadas={MonedasEntregadas}";
                     await Shell.Current.GoToAsync(route);
                 }
                 else

@@ -10,7 +10,10 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="15">
+            <Frame BackgroundColor="{StaticResource Key=Primary}">
+                <Label Text="Cambio" FontSize="Title" HorizontalOptions="Center" TextColor="White"/>
+            </Frame>
             <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
                 <StackLayout Spacing="0" Orientation="Horizontal">
                     <Label Text="Su cambio es de: " FontSize="Body"/>
@@ -20,32 +23,35 @@
             </Frame>
             <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
                 <StackLayout Spacing="0" Orientation="Horizontal">
-                    <Label Text="Su cambio es de: " FontSize="Body"/>
-                    <Label Text="{Binding Divisa10}"/>
-                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                    <Label Text="Monedas de 10(pesos): " FontSize="Body"/>
+                    <Label Text="{Binding Divisa10}" FontAttributes="Bold"/>
                 </StackLayout>
             </Frame>
             <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
                 <StackLayout Spacing="0" Orientation="Horizontal">
-                    <Label Text="Su cambio es de: " FontSize="Body"/>
-                    <Label Text="{Binding Divisa5}"/>
-                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                    <Label Text="Monedas de 5(pesos): " FontSize="Body"/>
+                    <Label Text="{Binding Divisa5}" FontAttributes="Bold"/>
                 </StackLayout>
             </Frame>
             <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
                 <StackLayout Spacing="0" Orientation="Horizontal">
-                    <Label Text="Su cambio es de: " FontSize="Body"/>
-                    <Label Text="{Binding Divisa2}"/>
-                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                    <Label Text="Monedas de 2(pesos): " FontSize="Body"/>
+                    <Label Text="{Binding Divisa2}" FontAttributes="Bold"/>
                 </StackLayout>
             </Frame>
             <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
                 <StackLayout Spacing="0" Orientation="Horizontal">
-                    <Label Text="Su cambio es de: " FontSize="Body"/>
-                    <Label Text="{Binding Divisa1}"/>
-                    <Label Text="$" FontSize="Body" FontAttributes="Bold"/>
+                    <Label Text="Monedas de 1(peso): " FontSize="Body"/>
+                    <Label Text="{Binding Divisa1}" FontAttributes="Bold"/>
                 </StackLayout>
             </Frame>
+            <Frame BorderColor="Transparent" BackgroundColor="Transparent" HasShadow="False" Padding="0">
+                <StackLayout Spacing="0" Orientation="Horizontal">
+                    <Label Text="Total de monedas entregadas: " FontSize="Body"/>
+                    <Label Text="{Binding MonedasEntregadas}" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+            <Button Text="Regresar" Margin="30,15,30,0" Command="{Binding RegresarAEstacionamiento}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

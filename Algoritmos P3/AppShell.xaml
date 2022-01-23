@@ -37,7 +37,7 @@
         </ShellContent>
         <ShellContent Title="Estacionamiento" Route="EstacionamientoPage" ContentTemplate="{DataTemplate local:EstacionamientoPage}">
             <ShellContent.Icon>
-                <FontImageSource FontFamily="FAS" Glyph=""/>
+                <FontImageSource FontFamily="FAS" Glyph=""/>
             </ShellContent.Icon> 
         </ShellContent>
     </TabBar>
